@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>课程表&搜索</title>
+		<link type="text/css" rel="stylesheet" href="css/main.css" />
+		<script src="js/data.js"></script>
+	</head>
+	<body>
+		<div class="center search">
+			<input id="search_words" placeholder="键入以搜索" />
+			<br>
+			<div id="info_box"></div>
+		</div>
+		<div class="bg">
+			<img id="bgclass" src="img/class.png" />
+		</div>
+		<script>
+			load("bgclass");
+			var searchWords = document.getElementById("search_words");
+			var infoBox = document.getElementById("info_box");
+			var search = "https://cn.bing.com/search?q=";
+			var eyes = [
+				":", ";", "X", "8"
+			];
+			var mouthes = [
+				"D", ")", "(", "]", "J", "/", "x", "O", "3", "P", "^"
+			];
+			
+			searchWords.onkeyup = function () {
+				var runProgram = eyes[parseInt(Math.random() * eyes.length)] + 
+					mouthes[parseInt(Math.random() * mouthes.length)];
+				try {
+					var s = eval(searchWords.value);
+					runProgram = s ? "JavaScript &gt;&gt;&nbsp;" + s : runProgram;
+				} catch (e) {
+					console.log(e.toString());
+				}
+				infoBox.innerHTML = runProgram;
+			}
+			searchWords.onkeydown = function () {
+				if (event.keyCode == '13') {
+					load("bgclass");
+					window.open(search + encodeURL(searchWords.value));
+				}
+			}
+			
+			searchWords.onkeyup();
+		</script>
+	</body>
+</html>
