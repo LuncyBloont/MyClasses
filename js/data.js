@@ -1,5 +1,5 @@
 function encodeURL(uri) {
-	let s = encodeURI(uri);
+	let s = encodeURIComponent(uri);
 	
 	if (uri === "C L A S S") {
 		localStorage.setItem("pass", "passed");
