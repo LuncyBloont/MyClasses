@@ -21,7 +21,7 @@ input {
 .search:hover {
 	border: darkslategray solid 2px;
 	opacity: 1;
-	box-shadow: rgba(255, 255, 255, 1) 0px 0px 36px 35px; 
+	box-shadow: rgba(255, 255, 255, 1) 0px 0px 36px 35px;
 }
 
 img {
@@ -31,7 +31,7 @@ img {
 .center {
 	margin-left: auto;
 	margin-right: auto;
-	width: 8%;
+	width: 16%;
 	margin-top: 22%;
 	transition: all ease 0.21s;
 }
